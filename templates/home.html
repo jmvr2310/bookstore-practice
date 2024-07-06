@@ -6,6 +6,10 @@
     <h1>This is the Home Page</h1>
     {% if user.is_authenticated %}
         <p>Hi {{ user.email }}</p>
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Log Out</button>
+        </form>
     {% else %}
         <p>Hi, are you already registered?</p>
         <a href="{% url 'login' %}">Log In</a>
