@@ -1,9 +1,14 @@
 {% extends "_base.html" %}
 
 {% block title %}Home{% endblock title %}
+{% load static %}
 
 {% block content %}
     <h1>This is the Home Page</h1>
+    <p>
+        <img class="bookcover" src="{% static 'images/gato.png' %}" alt="meow">
+        <img class="bookcover" src="{% static 'images/fumo sparkle.gif' %}" alt="La Creatura">
+    </p>
     {% if user.is_authenticated %}
         <p>Hi {{ user.username }}</p>
         <form action="{% url 'logout' %}" method="post">
