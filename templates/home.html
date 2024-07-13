@@ -4,20 +4,23 @@
 {% load static %}
 
 {% block content %}
+    
     <h1>This is the Home Page</h1>
     <p>
         <img class="bookcover" src="{% static 'images/gato.png' %}" alt="meow">
         <img class="bookcover" src="{% static 'images/fumo sparkle.gif' %}" alt="La Creatura">
     </p>
+    
     {% if user.is_authenticated %}
         <p>Hi {{ user.username }}</p>
-        <form action="{% url 'logout' %}" method="post">
+        <!-- <form action="{% url 'logout' %}" method="post">
             {% csrf_token %}
             <button type="submit">Log Out</button>
-        </form>
+        </form> -->
     {% else %}
         <p>Hi, are you already registered?</p>
-        <a href="{% url 'login' %}">Log In</a> |
-        <a href="{% url 'signup' %}">Sign Up</a>
+        <!-- <a href="{% url 'login' %}">Log In</a> |
+        <a href="{% url 'signup' %}">Sign Up</a> -->
     {% endif %}
+    <img class="bookcover" src="{% static 'images/club-penguin-club-penguin-dance.gif' %}" alt="">
 {% endblock content %}
