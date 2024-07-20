@@ -40,9 +40,10 @@ INSTALLED_APPS = [
     # local
     'accounts.apps.AccountsConfig',
     'pages.apps.PagesConfig',
+    'books.apps.BooksConfig',
     # third
     'crispy_forms',
-    'crispy_bootstrap5'
+    'crispy_bootstrap5',
 ]
 
 # django crispy forms
